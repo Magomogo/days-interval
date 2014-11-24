@@ -1,6 +1,8 @@
 Days interval
 =============
 
+[![Build Status](https://travis-ci.org/Magomogo/days-interval.svg?branch=master)](https://travis-ci.org/Magomogo/days-interval)
+
 Manipulation with date periods: intersection, splitting etc.
 
 # Axiom
