@@ -1,0 +1,40 @@
+{
+  "name": "days-interval",
+  "version": "0.0.1",
+  "description": "Manipulation with date periods: intersection, splitting etc.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "tdd": "mocha -R min -w ./tests/*.test.js ./index.js",
+    "test": "mocha tests/*.test.js",
+    "posttest": "jshint ./index.js ./tests/ && jscs ./index.js ./tests/ --reporter=console"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Magomogo/days-interval.git"
+  },
+  "keywords": [
+    "dates",
+    "days",
+    "interval",
+    "range",
+    "intersection",
+    "split"
+  ],
+  "author": "Maxim Gnatenko <mgnatenko@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Magomogo/days-interval/issues"
+  },
+  "homepage": "https://github.com/Magomogo/days-interval",
+  "dependencies": {
+    "lodash": "^2.4.1"
+  },
+  "devDependencies": {
+    "mocha": "^2.0.1",
+    "jshint": "^2.5.10",
+    "jscs": "^1.7.3"
+  }
+}
