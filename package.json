@@ -1,6 +1,6 @@
 {
   "name": "days-interval",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Manipulation with date periods: intersection, splitting etc.",
   "main": "index.js",
   "directories": {
