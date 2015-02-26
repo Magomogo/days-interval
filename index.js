@@ -100,6 +100,20 @@
         return result;
     }
 
+    function adjacent(firstDays) {
+        var intervals = [],
+            daysOrdered = _.uniq(_.sortBy(firstDays), true);
+
+        while (daysOrdered.length > 1) {
+            intervals.push({
+                firstDay: daysOrdered.shift(),
+                lastDay: daysOrdered.length === 1 ? daysOrdered[0] : yesterday(daysOrdered[0])
+            });
+        }
+
+        return intervals;
+    }
+
     module.exports = {
         create: function (firstDay, lastDay) {
             return {
@@ -109,7 +123,8 @@
         },
         intersection: intersection,
         split: split,
-        succession: succession
+        succession: succession,
+        adjacent: adjacent
     };
 
 }());

@@ -183,6 +183,62 @@
                 );
             });
         });
+
+        describe('adjacent', function () {
+
+            it('gives no intervals from zero days', function () {
+                assert.deepEqual(
+                    interval.adjacent([]),
+                    []
+                );
+            });
+
+            it('creates single interval from two days', function () {
+                assert.deepEqual(
+                    interval.adjacent(['2015-03-01', '2015-03-31']),
+                    [
+                        interval.create('2015-03-01', '2015-03-31')
+                    ]
+                );
+            });
+
+            it('creates two adjacent intervals from three days', function () {
+                assert.deepEqual(
+                    interval.adjacent(['2015-03-01', '2015-03-31', '2015-05-03']),
+                    [
+                        interval.create('2015-03-01', '2015-03-30'),
+                        interval.create('2015-03-31', '2015-05-03')
+                    ]
+                );
+            });
+
+            it('can correctly handle Infinities', function () {
+                assert.deepEqual(
+                    interval.adjacent([-Infinity, '2015-03-31', '2015-05-03', Infinity]),
+                    [
+                        interval.create(-Infinity, '2015-03-30'),
+                        interval.create('2015-03-31', '2015-05-02'),
+                        interval.create('2015-05-03', Infinity)
+                    ]
+                );
+            });
+
+            it('won`t create interval from one day', function () {
+                assert.deepEqual(
+                    interval.adjacent(['2015-01-01']),
+                    []
+                );
+            });
+
+            it('creates unique intervals', function () {
+                assert.deepEqual(
+                    interval.adjacent(['2015-03-01', '2015-03-01', '2015-05-03']),
+                    [
+                        interval.create('2015-03-01', '2015-05-03')
+                    ]
+                );
+            });
+        });
     });
 
 }());

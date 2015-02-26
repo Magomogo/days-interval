@@ -49,6 +49,16 @@ Creates array of intervals. Resulting intervals include all days of source inter
             _____________4_____
             _________________55
     
+### interval.adjacent([firstDays])
+
+Creates array of adjacent intervals defined by set of its first days.
+
+    source:  ___d____d______d__
+
+    result: ____11111__________
+            _________22222222__
+
+Last day in set will be the last day of last interval. First and last days can be ±Infinity
 
 Contributing
 ============
